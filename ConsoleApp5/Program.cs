@@ -1,4 +1,6 @@
-﻿namespace ConsoleApp5
+﻿using CinemaSystem;
+
+namespace ConsoleApp5
 {
     internal class Program
     {
@@ -128,6 +130,52 @@ Calculation: 19.5 + 0.5 = 20.0
 Output: $20.00 (due to ToCurrency() formatting "{value:F2}")
              
              */
+            #endregion
+            #region PROJECT
+
+
+            Cinema cinema = new Cinema();
+            cinema.OpenCinema();
+
+            // a. Proving abstract class instantiation failure:
+            // Ticket t = new Ticket("Test", 100); // ERROR: Cannot create instance of abstract type 'Ticket'
+
+            // b. Create one of each ticket type with hardcoded data & book them
+            StandardTicket t1 = new StandardTicket("Inception", 80, "A5");
+            VipTicket t2 = new VipTicket("Avengers", 200, true, 50);
+            ImaxTicket t3 = new ImaxTicket("Dune", 130, true);
+
+            cinema.AddTicket(t1);
+            cinema.AddTicket(t2);
+            cinema.AddTicket(t3);
+
+            cinema.BookAllTickets();
+
+            // c. Print all tickets via Cinema's reporting file
+            cinema.PrintAllTickets();
+
+            // d. Demonstrate Polymorphism
+            Console.WriteLine("--- Polymorphism: Final Price per Ticket ---");
+            Ticket[] ticketsArray = cinema.GetTicketsArray();
+            foreach (var ticket in ticketsArray)
+            {
+                Console.WriteLine($"{ticket.GetType().Name} => Final Price: {ticket.CalculateFinalPrice():F2}");
+            }
+            Console.WriteLine();
+
+            // e. Call Extension Method: Generate Receipt on a single ticket (VIP)
+            Console.WriteLine("--- Extension Method: Receipt ---");
+            Console.WriteLine(t2.GenerateReceipt());
+            Console.WriteLine();
+
+            // f. Call Extension Method: Calculate Total Revenue on ticket array
+            Console.WriteLine("--- Extension Method: Total Revenue ---");
+            Console.WriteLine($"Total Revenue: {ticketsArray.CalculateTotalRevenue():F2}\n");
+
+            // g. Close Cinema
+            cinema.CloseCinema();
+
+
             #endregion
 
         }
