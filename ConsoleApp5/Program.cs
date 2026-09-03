@@ -29,6 +29,35 @@ Encapsulation is about bundling data and methods operating
              */
 
             #endregion
+            #region Q2
+            /*
+             
+             Abstract Class   :
+            Supports single inheritance (class A : B)
+            Can contain instance fields, constructors, and state
+            Members can have public, protected, private, etc
+            Can provide fully implemented methods alongside abstract ones
+
+
+            Interface
+            Supports multiple inheritance (class A : B, C, D)
+            Cannot contain instance fields or constructors (stateless contract)
+            Members are traditionally public contract declarations
+            Primarily defines signatures (though modern C# allows default implementations, state is omitted)
+
+
+            When to Choose Which:
+
+Choose an Abstract Class when classes share a strong "IS-A" relationship
+
+
+            Choose an Interface when defining a "CAN-DO'
+             
+
+             
+             
+             */
+            #endregion
 
         }
     }
