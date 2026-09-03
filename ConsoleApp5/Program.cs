@@ -58,6 +58,32 @@ Choose an Abstract Class when classes share a strong "IS-A" relationship
              
              */
             #endregion
+            #region Q3
+            /*
+             
+            A) No, it will cause a compilation error.
+
+Concept: Appliance is declared as an abstract clas
+            Abstract classes cannot be instantiated directly using new because they represent 
+            an incomplete specification
+             
+
+            b) No, it will cause a compilation error.
+
+Concept: Appliance is declared as an abstract class
+            Abstract classes cannot be instantiated directly
+            using new because they represent an incomplete specification
+
+
+            c)
+            Returns "Standby"
+
+Why 
+            Toaster does not override Status(), so C# executes the base virtual implementation defined in Appliance
+             
+             
+             */
+            #endregion
 
         }
     }
