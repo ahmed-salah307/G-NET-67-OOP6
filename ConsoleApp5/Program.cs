@@ -84,6 +84,51 @@ Why
              
              */
             #endregion
+            #region Q4
+            /*
+             a) Partial Class:
+
+Concept: A partial class allows the definition of a single class to be split across multiple .cs files. The compiler merges them into one class during compilation
+
+Why Split: Separation of concerns  and multi-developer collaboration on the same class without merge conflicts
+
+
+
+
+
+   b) Partial Method:
+
+ Concept; A partial method has its declaration in one partial class file and an optional implementation in another
+
+If OnCalculated() in Calculator.Logging.cs is deleted: The code will still compile successfully, If no implementation is provided, the C# compiler removes the method signature and all calls to it at compile time with zero performance overhead
+
+
+
+     c) Extension Method & Rules
+
+
+
+Concept; Enables adding new methods to existing types without modifying their source code or inheriting from them
+
+  Three Rules
+
+The class containing the method must be static
+
+The method itself must be static
+
+The first parameter must use the this keyword before the target type 
+
+
+
+
+d) Output of the execution block:
+
+Calculation: 19.5 + 0.5 = 20.0
+
+Output: $20.00 (due to ToCurrency() formatting "{value:F2}")
+             
+             */
+            #endregion
 
         }
     }
